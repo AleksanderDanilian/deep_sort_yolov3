@@ -44,7 +44,7 @@ def main(yolo):
 
     counter = []
     #deep_sort
-    model_filename = 'model_data/market1501.pb'
+    model_filename = 'model_data/mars-small128.pb'
     encoder = gdet.create_box_encoder(model_filename,batch_size=1)
 
     metric = nn_matching.NearestNeighborDistanceMetric("cosine", max_cosine_distance, nn_budget)
@@ -132,9 +132,9 @@ def main(yolo):
         cv2.putText(frame, "Total Object Counter: "+str(count),(int(20), int(120)),0, 5e-3 * 200, (0,255,0),2)
         cv2.putText(frame, "Current Object Counter: "+str(i),(int(20), int(80)),0, 5e-3 * 200, (0,255,0),2)
         cv2.putText(frame, "FPS: %f"%(fps),(int(20), int(40)),0, 5e-3 * 200, (0,255,0),3)
-        cv2.namedWindow("YOLO3_Deep_SORT", 0);
-        cv2.resizeWindow('YOLO3_Deep_SORT', 1024, 768);
-        cv2.imshow('YOLO3_Deep_SORT', frame)
+#         cv2.namedWindow("YOLO3_Deep_SORT", 0);
+#         cv2.resizeWindow('YOLO3_Deep_SORT', 1024, 768);
+#         cv2.imshow('YOLO3_Deep_SORT', frame)
 
         if writeVideo_flag:
             #save a frame
@@ -148,9 +148,9 @@ def main(yolo):
         fps  = ( fps + (1./(time.time()-t1)) ) / 2
         #print(set(counter))
 
-        # Press Q to stop!
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+#         # Press Q to stop!
+#         if cv2.waitKey(1) & 0xFF == ord('q'):
+#             break
     print(" ")
     print("[Finish]")
     end = time.time()
@@ -166,7 +166,7 @@ def main(yolo):
     if writeVideo_flag:
         out.release()
         list_file.close()
-    cv2.destroyAllWindows()
+#     cv2.destroyAllWindows()
 
 if __name__ == '__main__':
     main(YOLO())
