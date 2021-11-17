@@ -19,7 +19,7 @@ from yolo3.model import yolo_eval
 from yolo3.utils import letterbox_image
 import argparse
 ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--input",help="path to input video", default = "./test_video/det_t1_video_00315_test.avi")
+ap.add_argument("-i", "--input",help="path to input video", default = "./test_video/test.avi")
 ap.add_argument("-c", "--class",help="name of class", default = "person")
 args = vars(ap.parse_args())
 
