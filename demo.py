@@ -155,11 +155,11 @@ def main(yolo):
     print("[Finish]")
     end = time.time()
 
-    if len(pts[track.track_id]) != None:
-       print(args["input"][43:57]+": "+ str(count) + " " + str(class_name) +' Found')
+#     if len(pts[track.track_id]) != None:
+#        print(args["input"][43:57]+": "+ str(count) + " " + str(class_name) +' Found')
 
-    else:
-       print("[No Found]")
+#     else:
+#        print("[No Found]")
 
     video_capture.release()
 
