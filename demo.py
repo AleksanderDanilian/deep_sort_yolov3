@@ -109,7 +109,7 @@ def main(yolo):
             cv2.putText(frame,str(track.track_id),(int(bbox[0]), int(bbox[1] -50)),0, 5e-3 * 150, (color),2)
             if len(class_names) > 0:
                class_name = class_names[0]
-               cv2.putText(frame, str(class_names[0]),(int(bbox[0]), int(bbox[1] -20)),0, 5e-3 * 150, (color),2)
+#                cv2.putText(frame, str(class_names[0]),(int(bbox[0]), int(bbox[1] -20)),0, 5e-3 * 150, (color),2)
 
             i += 1
             #bbox_center_point(x,y)
@@ -129,9 +129,9 @@ def main(yolo):
                 #cv2.putText(frame, str(class_names[j]),(int(bbox[0]), int(bbox[1] -20)),0, 5e-3 * 150, (255,255,255),2)
 
         count = len(set(counter))
-        cv2.putText(frame, "Total Object Counter: "+str(count),(int(20), int(120)),0, 5e-3 * 200, (0,255,0),2)
-        cv2.putText(frame, "Current Object Counter: "+str(i),(int(20), int(80)),0, 5e-3 * 200, (0,255,0),2)
-        cv2.putText(frame, "FPS: %f"%(fps),(int(20), int(40)),0, 5e-3 * 200, (0,255,0),3)
+        cv2.putText(frame, "Всего человек: "+str(count),(int(20), int(120)),0, 5e-3 * 200, (0,255,0),2)
+        cv2.putText(frame, "Человек в кадре: "+str(i),(int(20), int(80)),0, 5e-3 * 200, (0,255,0),2)
+#         cv2.putText(frame, "FPS: %f"%(fps),(int(20), int(40)),0, 5e-3 * 200, (0,255,0),3)
 #         cv2.namedWindow("YOLO3_Deep_SORT", 0);
 #         cv2.resizeWindow('YOLO3_Deep_SORT', 1024, 768);
 #         cv2.imshow('YOLO3_Deep_SORT', frame)
