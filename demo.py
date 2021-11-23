@@ -106,7 +106,7 @@ def main(yolo):
             color = [int(c) for c in COLORS[indexIDs[i] % len(COLORS)]]
 
             cv2.rectangle(frame, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])),(color), 3)
-            cv2.putText(frame,str(track.track_id),(int(bbox[0]), int(bbox[1] -50)),0, 5e-3 * 150, (color),2)
+#             cv2.putText(frame,str(track.track_id),(int(bbox[0]), int(bbox[1] -50)),0, 5e-3 * 150, (color),2) # номера обьектов, по идее
             if len(class_names) > 0:
                class_name = class_names[0]
 #                cv2.putText(frame, str(class_names[0]),(int(bbox[0]), int(bbox[1] -20)),0, 5e-3 * 150, (color),2)
@@ -129,8 +129,8 @@ def main(yolo):
                 #cv2.putText(frame, str(class_names[j]),(int(bbox[0]), int(bbox[1] -20)),0, 5e-3 * 150, (255,255,255),2)
 
         count = len(set(counter))
-        cv2.putText(frame, "Всего человек: "+str(count),(int(20), int(120)),0, 5e-3 * 200, (0,255,0),2)
-        cv2.putText(frame, "Человек в кадре: "+str(i),(int(20), int(80)),0, 5e-3 * 200, (0,255,0),2)
+        cv2.putText(frame, "Всего человек: "+str(count),(int(20), int(120)),0, 5e-3 * 200, (0,255,0), 2, font = cv2.FONT_HERSHEY_COMPLEX)
+        cv2.putText(frame, "Человек в кадре: "+str(i),(int(20), int(80)),0, 5e-3 * 200, (0,255,0),2, font = cv2.FONT_HERSHEY_COMPLEX)
 #         cv2.putText(frame, "FPS: %f"%(fps),(int(20), int(40)),0, 5e-3 * 200, (0,255,0),3)
 #         cv2.namedWindow("YOLO3_Deep_SORT", 0);
 #         cv2.resizeWindow('YOLO3_Deep_SORT', 1024, 768);
