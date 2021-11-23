@@ -143,9 +143,13 @@ class YOLO(object):
             if y < 0 :
                 h = h + y
                 y = 0
-            return_boxs.append([x,y,w,h])
+            if w*h > 1000: # если ширина * высота больше 1000 пикселей - сохраняем
+                return_boxs.append([x,y,w,h])
+                return_class_name.append([predicted_class])
+            else:
+                continue
             #print(return_boxs)
-            return_class_name.append([predicted_class])
+            #return_class_name.append([predicted_class])
         #cv2.putText(image, str(self.class_names[c]),(int(box[0]), int(box[1] -50)),0, 5e-3 * 150, (0,255,0),2)
         #print("Found person: ",person_counter)
         return return_boxs,return_class_name
